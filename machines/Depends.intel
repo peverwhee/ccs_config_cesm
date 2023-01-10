@@ -43,8 +43,6 @@ mo_gas_concentrations.o \
 mo_fluxes_broadband_kernels.o \
 mo_fluxes_byband_kernels.o \
 mo_rrtmgp_util_reorder_kernels.o
-
-ADDITIONAL_RRTMGP=\
 mo_compute_bc.o\
 mo_fluxes_byband.o\
 mo_fluxes_bygpoint.o\
@@ -88,6 +86,4 @@ ifeq ($(DEBUG),FALSE)
 endif
 
 $(RRTMGP_OBJS): %.o: %.F90
-	$(FC) -c $(INCLDIR) $(INCS) $(FFLAGS) $(FREEFLAGS) -fno-openmp $<
-$(ADDITIONAL_RRTMGP): %.o: %.F90
 	$(FC) -c $(INCLDIR) $(INCS) $(FFLAGS) $(FREEFLAGS) -fno-openmp $<
